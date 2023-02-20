@@ -4,7 +4,7 @@ import "./index.css";
 import App from "./App";
 import Main from "./pages/Main";
 import Currencies from "./pages/Currencies";
-import Price from "./pages/Price";
+import Coin from "./pages/Coin";
 import reportWebVitals from "./reportWebVitals";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
@@ -14,7 +14,7 @@ const router = createBrowserRouter([
     element: <App />,
     children: [
       {
-        path: "/main",
+        path: "/",
         element: <Main />,
       },
       {
@@ -22,8 +22,8 @@ const router = createBrowserRouter([
         element: <Currencies />,
       },
       {
-        path: "/price",
-        element: <Price />,
+        path: "/coin/:symbol",
+        element: <Coin />,
       },
     ],
   },

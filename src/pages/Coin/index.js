@@ -1,7 +1,7 @@
 import React from "react";
 
 const Price = () => {
-  return <div>Price</div>;
+  return <div className="page-container">Coin</div>;
 };
 
 export default Price;

@@ -1,12 +1,15 @@
-import logo from "./logo.svg";
+// import logo from "./logo.svg";
 import "./App.css";
 import { Outlet } from "react-router-dom";
+import Nav from "./components/nav";
 
 function App() {
   return (
     <div className="App">
-      <nav>buttons of the nav</nav>
+      <Nav />
+
       {/* conditinally render those pages here */}
+
       <Outlet />
     </div>
   );
