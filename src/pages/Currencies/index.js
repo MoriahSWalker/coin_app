@@ -1,7 +1,10 @@
 import React, { useState } from "react";
 import "./index.css";
+import { useNavigate } from "react-router-dom";
 
 const Currencies = () => {
+  const navigate = useNavigate(); //returns us a function we can use
+
   const [currencies, setCurrencies] = useState([
     { name: "Bitcoin", symbol: "BTC" },
     { name: "Litecoin", symbol: "LTC" },
@@ -15,8 +18,21 @@ const Currencies = () => {
 
   console.log(currencies);
 
+  // make these li's clickable and take us to that specific coins page
+  const handleClick = (symbolOfItem) => {
+    console.log("we have the symbol of item that was clicked");
+    console.log(symbolOfItem);
+    navigate(`/coin/${symbolOfItem}`);
+    // manually switch pages to coin/symbolOfItem
+  };
+
   let listOfCoins = currencies.map((item) => {
-    return <li>{item.name}</li>;
+    // we use an anonomys function here so that our onclick fires when we click not when the page is run
+    return (
+      <li onClick={() => handleClick(item.symbol)} key={JSON.stringify(item)}>
+        {item.name}
+      </li>
+    );
   });
 
   return (
